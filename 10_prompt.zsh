@@ -1,4 +1,4 @@
-fpath=(~/.zshkit/zsh-git/functions $fpath)
+fpath=($ZSHKIT/zsh-git/functions $fpath)
 typeset -U fpath
 setopt prompt_subst
 autoload -U colors
