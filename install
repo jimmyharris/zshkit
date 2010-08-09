@@ -5,7 +5,17 @@ if [[ $mydir = . ]]; then
 fi
 dest=$HOME
 echo My Directory: $mydir
-cp $HOME/.zshenv $HOME/.zshenv.pre_zshkit
-cp $HOME/.zshrc $HOME/.zshrc.pre_zshkit
-echo "source $mydir/env" > $HOME/.zshenv
-echo "source $mydir/rc" > $HOME/.zshrc
+mv $HOME/.zshenv $HOME/.zshenv.pre_zshkit
+mv $HOME/.zshrc $HOME/.zshrc.pre_zshkit
+
+cat > $HOME/.zshenv <<EOF
+ZSHKIT=$mydir
+source \$ZSHKIT/zshenv
+source ~/.zshenv.local
+
+export ZSHKIT
+EOF
+cat > $HOME/.zshenv <<EOF
+source \$ZSHKIT/zshrc
+source ~/.zshrc.local
+EOF
