@@ -1,5 +1,10 @@
-# I want /opt/local/bin to take precedence
-path=(/opt/local/bin $path)
+if [[ -x /usr/libexec/path_helper ]]; then
+	eval $(/usr/libexec/path_helper -s)
+fi
 
-# Allow MacPorts man pages
-manpath=($manpath /opt/local/man)
+# setup fpath
+
+fpath=($ZSHKIT/func $fpath)
+
+# cleanup the path.
+typeset -U fpath path manpath
