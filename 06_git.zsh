@@ -14,16 +14,6 @@ if [[ -x `which git` ]]; then
 		git checkout "${branch}"
 		git rebase master
 	}
-	function git-prompt() {
-		gstatus=$(git status 2> /dev/null)
-		branch=$(echo $gstatus | head -1 | sed 's/^# On branch //')
-		dirty=$(echo $gstatus | sed 's/^#.*$//' | tail -2 | grep 'nothing to commit (working directory clean)'; echo $?)
-		if [[ x$branch != x ]]; then
-			dirty_color=$fg[cyan]
-			if [[ $dirty = 1 ]] { dirty_color=$fg[magenta] }
-			[ x$branch != x ] && echo " %{$dirty_color%}$branch%{$reset_color%} "
-		fi
-	}
 	function git-scoreboard () {
 		git log | grep Author | sort | uniq -ci | sort -r
 	}
@@ -32,22 +22,5 @@ if [[ -x `which git` ]]; then
 		git config branch.$branch.remote origin
 		git config branch.$branch.merge refs/heads/$branch
 		echo "tracking origin/$tracking"
-	}
-	function github-init () {
-		git config branch.$(git-branch-name).remote origin
-		git config branch.$(git-branch-name).merge refs/heads/$(git-branch-name)
-	}
-	
-	function github-url () {
-		git config remote.origin.url | sed -En 's/git(@|:\/\/)github.com(:|\/)(.+)\/(.+).git/https:\/\/github.com\/\3\/\4/p'
-	}
-	
-	# Seems to be the best OS X jump-to-github alias from http://tinyurl.com/2mtncf
-	function github-go () {
-		open $(github-url)
-	}
-	
-	function nhgk () {
-		nohup gitk --all &
 	}
 fi
