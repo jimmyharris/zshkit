@@ -5,7 +5,9 @@ function not_run_from_ssh () {
 	echo $?
 }
 
-if [[ -x `which mate` && $(not_run_from_ssh) = 1 ]]; then
+if [[ -x `which vim` ]]; then
+	EDITOR=vim
+elif [[ -x `which mate` && $(not_run_from_ssh) = 1 ]]; then
 	EDITOR="mate -w"
 elif [[ -x `which nano` ]]; then
 	EDITOR=nano
