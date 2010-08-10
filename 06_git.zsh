@@ -15,7 +15,7 @@ if [[ -x `which git` ]]; then
 		git rebase master
 	}
 	function git-scoreboard () {
-		git log | grep Author | sort | uniq -ci | sort -r
+		git log | grep '^Author' | sort | uniq -ci | sort -r
 	}
 	function git-track () {
 		branch=$(git-branch-name)
