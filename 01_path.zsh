@@ -1,7 +1,3 @@
-if [[ -x /usr/libexec/path_helper ]]; then
-	eval $(/usr/libexec/path_helper -s)
-fi
-
 path=(~/bin $path)
 
 # setup fpath
