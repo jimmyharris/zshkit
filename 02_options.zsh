@@ -3,6 +3,7 @@ setopt  	    auto_list
 setopt  	    auto_menu            
 setopt  	    auto_param_keys      
 setopt  	    auto_pushd           
+setopt		 NO_bg_nice
 setopt  	    bad_pattern          
 setopt  	    bang_hist            
 setopt  	    brace_ccl            
