@@ -1,4 +1,4 @@
-path=(~/bin $path)
+path=(~/bin /usr/local/bin /usr/bin $path)
 
 # setup fpath
 
