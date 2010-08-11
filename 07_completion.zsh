@@ -1,3 +1,6 @@
+# Files to ignore during completion
+fignore=(DS_Store $fignore)
+
 # From OSX zsh templates  
 # http://code.google.com/p/zsh-templates-osx/
 

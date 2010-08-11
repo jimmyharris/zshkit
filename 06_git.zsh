@@ -23,4 +23,7 @@ if [[ -x `which git` ]]; then
 		git config branch.$branch.merge refs/heads/$branch
 		echo "tracking origin/$tracking"
 	}
+	if [[ -s `which hub` ]] ; then
+		eval $(hub alias -s zsh)
+	fi
 fi
