@@ -62,3 +62,20 @@ zstyle ':completion:*:*:kill:*:processes' list-colors \
 # completion colours
 zstyle ':completion:*' list-colors "$LS_COLORS"
 
+if [[ -e `which pip` ]]; then
+	if [[ ! -d "$ZSHKIT/zsh-pip-completion" ]]; then
+		echo 'For better PyPI completion in zsh please run:'
+		echo ''
+		if [[ -e `which github` ]]; then
+			echo '	cd $ZSHKIT'
+			echo '	github clone jimmyharris zsh-pip-completion'
+		else
+			echo '	cd $ZSHKIT'
+			echo '	git clone git://github.com/jimmyharris/zsh-pip-completion.git'
+		fi
+		echo ''
+		eval `pip completion --zsh`
+	else
+		fpath=($ZSHKIT/zsh-pip-completion $fpath)
+	fi
+fi
