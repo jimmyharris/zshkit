@@ -8,10 +8,7 @@ fignore=(DS_Store $fignore)
 zstyle ':completion:*' menu select=10
 
 # General completion technique
-zstyle ':completion:*' completer _complete _prefix
-zstyle ':completion::prefix-1:*' completer _complete
-zstyle ':completion:incremental:*' completer _complete _correct
-zstyle ':completion:predict:*' completer _complete
+zstyle ':completion:*' completer _complete _correct _approximate _prefix
 
 # Completion caching
 zstyle ':completion::complete:*' use-cache 1
@@ -20,12 +17,6 @@ zstyle ':completion::complete:*' cache-path ~/.zsh/cache/$HOST
 # Expand partial paths
 zstyle ':completion:*' expand 'yes'
 zstyle ':completion:*' squeeze-slashes 'yes'
-
-# Include non-hidden directories in globbed file completions
-# for certain commands
-#zstyle ':completion::complete:*' \
-	#  tag-order 'globbed-files directories' all-files
-#zstyle ':completion::complete:*:tar:directories' file-patterns '*~.*(-/)'
 
 # Don't complete backup files as executables
 zstyle ':completion:*:complete:-command-::commands' ignored-patterns '*\~'
