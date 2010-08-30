@@ -1,0 +1,9 @@
+#compdef note
+
+__all_notes() {
+	_notes=($(notelist))
+	compadd "$@" -k _notes
+}
+_note() {
+	_arguments "*:notes:__all_notes" && ret=0
+}
