@@ -4,7 +4,8 @@ if [[ -x `which R` ]]; then
 		export R_LIBS_SITE="$R_HOME/site-library"
 	else
 		export R_LIBS_SITE="$R_HOME/library"
-		manpath=($R_HOME $manpath)
+		manpath=($manpath $R_HOME)
+		typeset -U manpath
 	fi
 	alias Rinstall="sudo R CMD INSTALL --library=$R_LIBS_SITE"
 	alias Runisntall="sudo R CMD REMOVE  --library=$R_LIBS_SITE"
