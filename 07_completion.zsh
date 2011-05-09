@@ -8,7 +8,7 @@ fignore=(DS_Store $fignore)
 zstyle ':completion:*' menu select=10
 
 # General completion technique
-zstyle ':completion:*' completer _complete _correct _approximate _prefix
+zstyle ':completion:*' completer _complete _approximate _prefix
 
 # Completion caching
 zstyle ':completion::complete:*' use-cache 1

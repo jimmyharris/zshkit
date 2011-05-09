@@ -7,7 +7,7 @@ setopt		 NO_bg_nice
 setopt  	    bad_pattern          
 setopt  	    bang_hist            
 setopt  	    brace_ccl            
-setopt  	    correct_all          
+setopt  	 NO_correct_all          
 setopt  	    cdable_vars          
 setopt  	 NO_chase_links          
 setopt  	 NO_clobber              
