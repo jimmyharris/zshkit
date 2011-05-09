@@ -1,4 +1,11 @@
-path=(~/bin /usr/local/bin /usr/bin $path)
+path=(/usr/local/bin /usr/bin $path)
+
+# If macports is installed
+if [[ -d "/opt/local" ]]; then
+  path=(/opt/local/bin $path)
+  manpath=(/opt/local/man $manpath)
+fi
+path=(~/bin $path)
 
 # setup fpath
 
