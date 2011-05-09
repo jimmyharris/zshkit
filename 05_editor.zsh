@@ -5,6 +5,12 @@ function not_run_from_ssh () {
 	echo $?
 }
 
+# if [[ -x /Applications/Emacs.app/Contents/MacOS/bin/emacsclient ]]; then
+  # path=(/Applications/Emacs.app/Contents/MacOS/ /Applications/Emacs.app/Contents/MacOS/bin/ $path)
+# fi
+
+typeset -U path
+
 if [[ -x `which vim` ]]; then
 	EDITOR=vim
 elif [[ -x `which mate` && $(not_run_from_ssh) = 1 ]]; then
