@@ -28,6 +28,10 @@ if [[ -x `which git` ]]; then
 	fi
 fi
 
+if [[ -d /usr/lib/git-core ]]; then 
+  path=($path /usr/lib/git-core)
+fi
+
 # Git submodule Completion:
 _git-submodule () {
   local curcontext=$curcontext state line
