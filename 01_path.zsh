@@ -1,4 +1,4 @@
-path=(/usr/local/bin /usr/bin $path)
+path=(/usr/local/bin /usr/bin /usr/local/sbin /usr/sbin $path)
 
 # If macports is installed
 if [[ (! -L "/opt/local" ) && ( -d "/opt/local") ]]; then
