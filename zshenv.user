@@ -1,0 +1,5 @@
+ZSHKIT=$HOME/.zshkit
+source $ZSHKIT/zshenv
+source ~/.zshenv.local
+
+export ZSHKIT

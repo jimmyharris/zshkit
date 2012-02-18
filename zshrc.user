@@ -1,0 +1,2 @@
+source $ZSHKIT/zshrc
+source ~/.zshrc.local
