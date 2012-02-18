@@ -1,2 +1,4 @@
 source $ZSHKIT/zshrc
-source ~/.zshrc.local
+if [[ -f ~/.zshrc.local ]]; then
+  source ~/.zshrc.local
+fi
