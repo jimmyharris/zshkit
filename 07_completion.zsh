@@ -55,6 +55,14 @@ zstyle ':completion:*' list-colors "$LS_COLORS"
 
 if [[ -o login ]]; then
 
+  if [[ ! -h $ZSHKIT/func/_rvm ]]; then
+    if [[ -f /usr/local/rvm/scripts/zsh/Completion/_rvm ]]; then
+      ln -s "/usr/local/rvm/scripts/zsh/Completion/_rvm" $ZSHKIT/func/_rvm
+    fi
+    if [[ -f $HOME/.rvm/scripts/zsh/Completion/_rvm ]]; then
+      ln -s "$HOME/.rvm/scripts/zsh/Completion/_rvm" $ZSHKIT/func/_rvm
+    fi
+  fi
   if [[ -f "/usr/local/Library/Contributions/brew_zsh_completion.zsh" ]]; then
     if [[ ! -h $ZSHKIT/func/_brew ]]; then
       ln -s "/usr/local/Library/Contributions/brew_zsh_completion.zsh" $ZSHKIT/func/_brew
