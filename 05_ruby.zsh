@@ -17,7 +17,21 @@ fi
 
 if [[ -n $rbenv_root ]]; then
   path=($rbenv_root/bin $path)
-  eval "$(rbenv init -)"
+  path=($rbenv_root/shims $path)
+  . "$rbenv_root/completions/rbenv.zsh"
+  rbenv() {
+    local command="$1"
+    if [ "$#" -gt 0 ]; then
+      shift
+    fi
+
+    case "$command" in
+      shell)
+        eval `rbenv "sh-$command" "$@"`;;
+      *)
+        command rbenv "$command" "$@";;
+    esac
+  }
 fi
 
 typeset -U fpath path manpath
