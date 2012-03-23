@@ -24,7 +24,10 @@ if [[ -x `which git` ]]; then
 		echo "tracking origin/$tracking"
 	}
 	if [[ -s `which hub` ]] ; then
-		eval $(hub alias -s zsh)
+    alias git=hub
+    if type compdef >/dev/null; then
+      compdef hub=git
+    fi
 	fi
 fi
 
