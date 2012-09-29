@@ -10,7 +10,7 @@ setopt  	    brace_ccl
 setopt  	 NO_correct_all          
 setopt  	    cdable_vars          
 setopt  	 NO_chase_links          
-setopt  	 NO_clobber              
+setopt  	    clobber              
 setopt  	    complete_in_word     
 setopt  	 NO_csh_junkie_loops     
 setopt  	 NO_csh_junkie_quotes    
