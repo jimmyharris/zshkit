@@ -24,7 +24,7 @@ if [[ -x `which git` ]]; then
 		echo "tracking origin/$tracking"
 	}
 	if [[ -s `which hub` ]] ; then
-    alias git=hub
+    alias g=hub
     if type compdef >/dev/null; then
       compdef hub=git
     fi
