@@ -8,6 +8,7 @@ if [[ -x `which git` ]]; then
     pushd $HOME
     pushd $mydir
     git pull
+    git submodule update --init
     popd
     source .zshrc
     source .zshenv
