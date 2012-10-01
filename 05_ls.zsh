@@ -3,13 +3,15 @@
 # gls. On a normal Linux distro it will simply be ls. If I am not on linux and
 # gls doesn't exist, then I am using BSD LS.
 
+export LS_COLORS=""
+
 if [[ -x `which gls` ]]; then
 	alias rls=`which ls`
 	alias ls='gls -h --color=auto '
-  eval $(gdircolors "$ZSHKIT/dircolors.256dark")
+  eval $(gdircolors "$ZSHKIT/dircolors-solarized/dircolors.ansi-dark")
 elif [[ $OSTYPE == "linux-gnu" ]]; then
 	alias ls='ls -h --color=auto '
-  eval $(dircolors "$ZSHKIT/dircolors.256dark")
+  eval $(dircolors "$ZSHKIT/dircolors-solarized/dircolors.ansi-dark")
 else
   # TODO: Fix bsd ls for solarized. much uglier than it seems.
 	export LS_COLORS=BxfxcxdxCxegedabagacadp
