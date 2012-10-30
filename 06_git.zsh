@@ -29,6 +29,9 @@ if [[ -x `which git` ]]; then
       compdef hub=git
     fi
 	fi
+  if [[ -s `which git-gerrit` ]]; then
+    alias gg='g gerrit'
+  fi
 fi
 
 if [[ -d /usr/lib/git-core ]]; then 
