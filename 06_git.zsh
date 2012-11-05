@@ -24,13 +24,10 @@ if [[ -x `which git` ]]; then
 		echo "tracking origin/$tracking"
 	}
 	if [[ -s `which hub` ]] ; then
-    alias g=hub
-    if type compdef >/dev/null; then
-      compdef hub=git
-    fi
+    alias git='hub'
 	fi
   if [[ -s `which git-gerrit` ]]; then
-    alias gg='g gerrit'
+    alias gg='git gerrit'
   fi
 fi
 
