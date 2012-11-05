@@ -66,7 +66,7 @@ setopt unset NO_verbose
 # setopt  	 NO_auto_resume          
 # setopt  	 NO_beep                 
 # setopt  	 NO_bsd_echo             
-# setopt  	    complete_aliases     
+setopt  	    complete_aliases     
 # setopt  	 NO_correct              
 # setopt  	    csh_junkie_history   
 # setopt  	    equals               
