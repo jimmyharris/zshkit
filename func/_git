@@ -20,7 +20,7 @@
 # completion as well.  Place such a function inside an autoloaded #compdef file
 # and you should be all set.  You can add a description to such a function by
 # adding a line matching
-# 
+#
 #     #description DESCRIPTION
 #
 # as the second line in the file.  See
@@ -280,7 +280,7 @@ _git-branch () {
   declare l c m d
 
   l='--color --no-color -r -a -v --verbose --abbrev --no-abbrev'
-  c='-l -f --force -t --track --no-track --set-upstream --contains --merged --no-merged'
+  c='-l -f --force -t --track --no-track --set-upstream-to --contains --merged --no-merged'
   m='-m -M'
   d='-d -D'
 
@@ -323,7 +323,7 @@ _git-branch () {
     "($l $m $d -f --force)"{-f,--force}"[force the creation of a new branch]" \
     "($l $m $d -t --track)"{-t,--track}"[set up configuration so that pull merges from the start point]" \
     "($l $m $d)--no-track[override the branch.autosetupmerge configuration variable]" \
-    "($l $m $d)--set-upstream[set up configuration so that pull merges]" \
+    "($l $m $d)--set-upstream-to[set up configuration so that pull merges]" \
     "($l $m $d)--contains=[only list branches which contain the specified commit]: :__git_committishs" \
     "($l $m $d)--merged=[only list branches which are fully contained by HEAD]: :__git_committishs" \
     "($l $m $d)--no-merged=[do not list branches which are fully contained by HEAD]: :__git_committishs" \
@@ -1168,7 +1168,7 @@ _git-push () {
     '(--receive-pack --exec)'{--receive-pack=-,--exec=-}'[path to git-receive-pack on remote]:remote git-receive-pack:_files' \
     '(-f --force)'{-f,--force}'[allow refs that are not ancestors to be updated]' \
     '(:)--repo=[default repository to use]:repository:__git_any_repositories' \
-    '(-u --set-upstream)'{-u,--set-upstream}'[add upstream reference for each branch that is up to date or pushed]' \
+    '(-u --set-upstream-to)'{-u,--set-upstream-to}'[add upstream reference for each branch that is up to date or pushed]' \
     '(       --no-thin)--thin[try to minimize number of objects to be sent]' \
     '(--thin          )--no-thin[do not try to minimize number of objects to be sent]' \
     '(-q --quiet -v --verbose --progress)'{-q,--quiet}'[suppress all output]' \
@@ -1471,6 +1471,7 @@ _git-submodule () {
         add:'add given repository as a submodule'
         status:'show the status of a submodule'
         init:'initialize a submodule'
+        deinit:'remove a submodule'
         update:'update a submodule'
         summary:'show commit summary between given commit and working tree/index'
         foreach:'evaluate shell command in each checked-out submodule'
@@ -1503,6 +1504,11 @@ _git-submodule () {
         (init)
           _arguments -S \
             '(-q --quiet)'{-q,--quiet}'[suppress all output]' \
+            '*: :__git_ignore_line_inside_arguments __git_submodules' && ret=0
+        (deinit)
+          _arguments -S \
+            '(-q --quiet)'{-q,--quiet}'[suppress all output]' \
+            '(-f --force)'{-f,--force}'[remove even if submodule is dirty]' \
             '*: :__git_ignore_line_inside_arguments __git_submodules' && ret=0
           ;;
         (update)
