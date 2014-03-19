@@ -9,12 +9,17 @@ if [[ -x `which gls` ]]; then
 	alias rls=`which ls`
 	alias ls='gls -h --color=auto '
   eval $(gdircolors "$ZSHKIT/dircolors-solarized/dircolors.ansi-dark")
+  # completion colours
+  zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 elif [[ $OSTYPE == "linux-gnu" ]]; then
 	alias ls='ls -h --color=auto '
-  eval $(dircolors "$ZSHKIT/dircolors-solarized/dircolors.ansi-universal")
+  eval $(dircolors "$ZSHKIT/dircolors-solarized/dircolors.ansi-dark")
+  # completion colours
+  zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 else
   # TODO: Fix bsd ls for solarized. much uglier than it seems.
-	export LS_COLORS=BxfxcxdxCxegedabagacadp
+	# export LS_COLORS=BxfxcxdxCxegedabagacadp
+	export LS_COLORS=gxfxbEaEBxxEhEhBaDaCaD
 fi
 alias ll="ls -al"
 
