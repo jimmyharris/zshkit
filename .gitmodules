@@ -7,3 +7,6 @@
 [submodule "dircolors-solarized"]
 	path = dircolors-solarized
 	url = git://github.com/jimmyharris/dircolors-solarized.git
+[submodule "powerline-fonts"]
+	path = powerline-fonts
+	url = git://github.com/Lokaltog/powerline-fonts.git
