@@ -1,7 +1,7 @@
 # Files to ignore during completion
 fignore=(DS_Store $fignore)
 
-# From OSX zsh templates  
+# From OSX zsh templates
 # http://code.google.com/p/zsh-templates-osx/
 
 # enable menu selection
@@ -45,13 +45,10 @@ zstyle ':completion:*:history-words' menu yes
 # LS Colours
 zmodload -i zsh/complist
 
-zstyle ':completion:*' list-colors ''
+# zstyle ':completion:*' list-colors ''
 
 zstyle ':completion:*:*:kill:*:processes' list-colors \
-	'=(#b) #([0-9]#)*=0=01;31'
-
-# completion colours
-zstyle ':completion:*' list-colors "$LS_COLORS"
+  '=(#b) #([0-9]#)*=0=01;31'
 
 if [[ -o login ]]; then
 
