@@ -11,7 +11,7 @@ if [[ -x `which gls` ]]; then
   eval $(gdircolors "$ZSHKIT/dircolors-solarized/dircolors.ansi-dark")
 elif [[ $OSTYPE == "linux-gnu" ]]; then
 	alias ls='ls -h --color=auto '
-  eval $(dircolors "$ZSHKIT/dircolors-solarized/dircolors.ansi-dark")
+  eval $(dircolors "$ZSHKIT/dircolors-solarized/dircolors.ansi-universal")
 else
   # TODO: Fix bsd ls for solarized. much uglier than it seems.
 	export LS_COLORS=BxfxcxdxCxegedabagacadp
