@@ -5,6 +5,11 @@ if [[ (! -L "/opt/local" ) && ( -d "/opt/local") ]]; then
   path=(/opt/local/bin $path)
   manpath=(/opt/local/man $manpath)
 fi
+
+if [[ -d "$HOME/.local/bin" ]]; then
+  path=(~/.local/bin $path)
+fi
+
 path=(~/bin $path)
 
 # setup fpath

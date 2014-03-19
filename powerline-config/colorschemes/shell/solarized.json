@@ -1,0 +1,29 @@
+{
+	"name": "Solarized Dark",
+	"groups": {
+		"jobnum":               { "fg": "base0", "bg": "base02" },
+		"user":                 { "fg": "base2", "bg": "base1", "attr": ["bold"] },
+		"superuser":            { "fg": "base3", "bg": "red", "attr": ["bold"] },
+		"virtualenv":           { "fg": "base0", "bg": "green" },
+		"branch":               { "fg": "base00", "bg": "base02" },
+		"branch_dirty":         { "fg": "yellow", "bg": "base02" },
+		"branch_clean":         { "fg": "base00", "bg": "base02" },
+		"continuation":         { "fg": "lightyellow", "bg": "base01" },
+		"continuation:current": { "fg": "base0", "bg": "base01", "attr": ["bold"] },
+		"cwd":                  { "fg": "base00", "bg": "base02" },
+		"cwd:current_folder":   { "fg": "base00", "bg": "base02", "attr": ["bold"] },
+		"cwd:divider":          { "fg": "base03", "bg": "base02" },
+		"hostname":             { "fg": "base1", "bg": "base01" },
+		"exit_fail":            { "fg": "base3", "bg": "red" },
+		"exit_success":         { "fg": "base3", "bg": "green" },
+		"environment":          { "fg": "base1", "bg": "green" },
+		"mode":                 { "fg": "base1", "bg": "green", "attr": ["bold"] }
+	},
+	"mode_translations": {
+		"vicmd": {
+			"groups": {
+				"mode": { "fg": "oldlace", "bg": "blue", "attr": ["bold"] }
+			}
+		}
+	}
+}

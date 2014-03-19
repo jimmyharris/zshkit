@@ -1,4 +1,6 @@
 #!/usr/bin/env zsh
+#
+# TODO: Add powerline-config link to this code.
 mydir=`dirname $0`
 if [[ $mydir = . ]]; then
 	mydir=`pwd`
