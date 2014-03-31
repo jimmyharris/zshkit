@@ -7,8 +7,9 @@ if [[ -o interactive ]]; then
   setopt prompt_subst
 	autoload -U colors
 	autoload -U promptinit
-  if [[ -f "$POWERLINE_ROOT/bindings/zsh/powerline.zsh" ]]; then
-    . $POWERLINE_ROOT/bindings/zsh/powerline.zsh
+  powerline_path="$POWERLINE_ROOT/bindings/zsh/powerline.zsh"
+  if [[ ( $TERM != "linux"  ) && ( -f $powerline_path ) ]]; then
+    . $powerline_path
   else
     promptinit
     prompt wunjo
