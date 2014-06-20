@@ -14,7 +14,7 @@ path=(~/bin $path)
 
 # setup fpath
 
-fpath=($ZSHKIT/func $ZSHKIT/completions/src $ZSHKIT/hub-zsh-completion $fpath)
+fpath=($ZSHKIT/func $ZSHKIT/completions/src $fpath)
 
 # cleanup the path.
 typeset -U fpath path manpath
