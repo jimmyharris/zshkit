@@ -1,12 +1,12 @@
 [submodule "zsh-git"]
 	path = zsh-git
-	url = git://github.com/jimmyharris/zsh-git.git
+	url = https://github.com/jimmyharris/zsh-git.git
 [submodule "completions"]
 	path = completions
-	url = git://github.com/zsh-users/zsh-completions.git
+	url = https://github.com/zsh-users/zsh-completions.git
 [submodule "dircolors-solarized"]
 	path = dircolors-solarized
-	url = git://github.com/jimmyharris/dircolors-solarized.git
+	url = https://github.com/jimmyharris/dircolors-solarized.git
 [submodule "powerline-fonts"]
 	path = powerline-fonts
-	url = git://github.com/Lokaltog/powerline-fonts.git
+	url = https://github.com/Lokaltog/powerline-fonts.git
