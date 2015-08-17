@@ -50,12 +50,3 @@ zmodload -i zsh/complist
 zstyle ':completion:*:*:kill:*:processes' list-colors \
   '=(#b) #([0-9]#)*=0=01;31'
 
-if [[ -o login ]]; then
-
-  if [[ -f "/usr/local/Library/Contributions/brew_zsh_completion.zsh" ]]; then
-    if [[ ! -h $ZSHKIT/func/_brew ]]; then
-      ln -s "/usr/local/Library/Contributions/brew_zsh_completion.zsh" $ZSHKIT/func/_brew
-    fi
-  fi
-
-fi
