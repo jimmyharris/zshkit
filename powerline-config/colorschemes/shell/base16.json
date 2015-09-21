@@ -18,12 +18,5 @@
 		"exit_success":         { "fg": "base03", "bg": "base0B" },
 		"environment":          { "fg": "base01", "bg": "base0B" },
 		"mode":                 { "fg": "base01", "bg": "base0B" }
-	},
-	"mode_translations": {
-		"vicmd": {
-			"groups": {
-				"mode": { "fg": "oldlace", "bg": "blue", "attr": ["bold"] }
-			}
-		}
 	}
 }
