@@ -323,7 +323,7 @@ _git-branch () {
     "($l $m $d -f --force)"{-f,--force}"[force the creation of a new branch]" \
     "($l $m $d -t --track)"{-t,--track}"[set up configuration so that pull merges from the start point]" \
     "($l $m $d)--no-track[override the branch.autosetupmerge configuration variable]" \
-    "($l $m $d)--set-upstream-to[set up configuration so that pull merges]" \
+    "($l $m $d)--set-upstream-to=[set up configuration so that pull merges]: :__git_remote_references" \
     "($l $m $d)--contains=[only list branches which contain the specified commit]: :__git_committishs" \
     "($l $m $d)--merged=[only list branches which are fully contained by HEAD]: :__git_committishs" \
     "($l $m $d)--no-merged=[do not list branches which are fully contained by HEAD]: :__git_committishs" \
