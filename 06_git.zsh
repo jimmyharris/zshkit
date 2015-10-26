@@ -8,7 +8,7 @@ if [[ -x `which git` ]]; then
 		echo $?
 	}
 	function gsrb () {
-		branch=$(git-branch-name) 
+		branch=$(git-branch-name)
 		git checkout master
 		git svn rebase
 		git checkout "${branch}"
@@ -24,14 +24,11 @@ if [[ -x `which git` ]]; then
 		echo "tracking origin/$tracking"
 	}
 	if [[ -s `which hub` ]] ; then
-    alias git='hub'
+    alias g='hub'
 	fi
-  if [[ -s `which git-gerrit` ]]; then
-    alias gg='git gerrit'
-  fi
 fi
 
-if [[ -d /usr/lib/git-core ]]; then 
+if [[ -d /usr/lib/git-core ]]; then
   path=($path /usr/lib/git-core)
 fi
 
