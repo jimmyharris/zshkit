@@ -14,6 +14,9 @@ zstyle ':completion:*' completer _complete _approximate _prefix
 zstyle ':completion::complete:*' use-cache 1
 zstyle ':completion::complete:*' cache-path ~/.zsh/cache/$HOST
 
+# Always rehash commands.
+zstyle ':completion:*:commands' rehash 1
+
 # Expand partial paths
 zstyle ':completion:*' expand 'yes'
 zstyle ':completion:*' squeeze-slashes 'yes'
