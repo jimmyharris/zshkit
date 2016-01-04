@@ -1,17 +1,13 @@
-export EDITOR
-
 function not_run_from_ssh () {
 	ps x|grep "${PPID}.*sshd"|grep -v grep
 	echo $?
 }
 
-# if [[ -x /Applications/Emacs.app/Contents/MacOS/bin/emacsclient ]]; then
-  # path=(/Applications/Emacs.app/Contents/MacOS/ /Applications/Emacs.app/Contents/MacOS/bin/ $path)
-# fi
-
 typeset -U path
 
-if [[ -x `which vim` ]]; then
+if [[ -x `which nvim` ]]; then
+	EDITOR=nvim
+elif [[ -x `which vim` ]]; then
 	EDITOR=vim
 elif [[ -x `which mate` && $(not_run_from_ssh) = 1 ]]; then
 	EDITOR="mate -w"
@@ -23,8 +19,10 @@ else
 	EDITOR=vi
 fi
 
+export EDITOR
+
 # Set EDITOR as default for plaintext stuff
-for s in txt c cc cxx cpp; do
+for s in txt c cc cxx cpp lua py; do
 	alias -s $s=$EDITOR
 done
 
@@ -37,3 +35,4 @@ if [[ $OSTYPE[1,6] == "darwin" ]]; then
 		alias -s $s=open
 	done
 fi
+
