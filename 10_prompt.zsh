@@ -1,5 +1,3 @@
-POWERLINE_ROOT="$HOME/.local/lib/python2.7/site-packages/powerline"
-
 if [[ -o interactive ]]; then
   export PROMPT=""
   fpath=($ZSHKIT/zsh-git/functions $fpath)
