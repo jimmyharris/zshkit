@@ -14,6 +14,7 @@ if [[ -d "$HOME/.local/bin" ]]; then
   path=(~/.local/bin $path)
 fi
 
+# Setup home directory bin path.
 path=(~/bin $path)
 
 # setup fpath

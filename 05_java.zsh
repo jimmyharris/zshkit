@@ -1,5 +1,7 @@
 if [[ $OSTYPE == "linux-gnu" ]]; then
-  if [[ -d "/usr/lib/jvm/java-1.7.0-openjdk-amd64" ]]; then
+  if [[ -d "/usr/lib/jvm/java-7-oracle" ]]; then
+    JAVA_HOME="/usr/lib/jvm/java-7-oracle"
+  elif [[ -d "/usr/lib/jvm/java-1.7.0-openjdk-amd64" ]]; then
     JAVA_HOME="/usr/lib/jvm/java-1.7.0-openjdk-amd64"
   elif [[ -d "/usr/lib/jvm/java" ]]; then
     JAVA_HOME="/usr/lib/jvm/java"
