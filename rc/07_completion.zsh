@@ -53,3 +53,4 @@ zmodload -i zsh/complist
 zstyle ':completion:*:*:kill:*:processes' list-colors \
   '=(#b) #([0-9]#)*=0=01;31'
 
+autoload -Uz compinit && compinit

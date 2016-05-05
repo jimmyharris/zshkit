@@ -1,12 +1,8 @@
 if [[ -x `which git` ]]; then
-  mydir=`dirname $0`
-  if [[ $mydir = . ]]; then
-    mydir=`pwd`
-  fi
-  
   function zshkit-update () {
+    # TODO: verify that zshkit is properly installed.
     pushd $HOME
-    pushd $mydir
+    pushd $ZSHKIT
     git pull
     git submodule update --init
     popd

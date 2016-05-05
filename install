@@ -1,14 +1,13 @@
 #!/usr/bin/env zsh
-#
-# TODO: Add powerline-config link to this code.
+
 mydir=`dirname $0`
 if [[ $mydir = . ]]; then
 	mydir=`pwd`
 fi
 dest=$HOME
 echo My Directory: $mydir
-# mv $HOME/.zshenv $HOME/.zshenv.pre_zshkit
-# mv $HOME/.zshrc $HOME/.zshrc.pre_zshkit
+mv $HOME/.zshenv $HOME/.zshenv.pre_zshkit
+mv $HOME/.zshrc $HOME/.zshrc.pre_zshkit
 
 cat > $HOME/.zshenv <<EOF
 ZSHKIT=${mydir}

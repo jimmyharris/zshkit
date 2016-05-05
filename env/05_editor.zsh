@@ -1,7 +1,3 @@
-function not_run_from_ssh () {
-	ps x|grep "${PPID}.*sshd"|grep -v grep
-	echo $?
-}
 
 typeset -U path
 
