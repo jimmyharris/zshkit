@@ -3,6 +3,6 @@ if [[ -x /usr/libexec/path_helper ]]; then
 fi
 mydir=`dirname $0`
 
-for f in $mydir/??_*.zsh; do
+for f in $mydir/env/??_*.zsh; do
 	source $f
 done
