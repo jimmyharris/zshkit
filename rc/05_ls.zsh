@@ -3,17 +3,13 @@
 # gls. On a normal Linux distro it will simply be ls. If I am not on linux and
 # gls doesn't exist, then I am using BSD LS.
 
-export LS_COLORS=""
-
 if [[ -x `which gls` ]]; then
 	alias rls=`which ls`
 	alias ls='gls -h --color=auto '
-  eval $(gdircolors "$ZSHKIT/dircolors-solarized/dircolors.ansi-dark")
   # completion colours
   zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 elif [[ $OSTYPE == "linux-gnu" ]]; then
 	alias ls='ls -h --color=auto '
-  eval $(dircolors "$ZSHKIT/dircolors-solarized/dircolors.ansi-dark")
   # completion colours
   zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 else
@@ -21,5 +17,3 @@ else
 	# export LS_COLORS=BxfxcxdxCxegedabagacadp
 	export LS_COLORS=gxfxbEaEBxxEhEhBaDaCaD
 fi
-alias ll="ls -al"
-

@@ -1,22 +1,24 @@
 #!/usr/bin/env zsh
 
-mydir=`dirname $0`
-if [[ $mydir = . ]]; then
-	mydir=`pwd`
-fi
+mydir="${0:A:h}"
+
 dest=$HOME
-echo My Directory: $mydir
+
+echo ZSHKIT Directory: $mydir
+
+cd $mydir
+git submodule update --init --recursive
+cd -
+
 mv $HOME/.zshenv $HOME/.zshenv.pre_zshkit
 mv $HOME/.zshrc $HOME/.zshrc.pre_zshkit
 
 cat > $HOME/.zshenv <<EOF
 ZSHKIT=${mydir}
 source \$ZSHKIT/zshenv
-source ~/.zshenv.local
 
 export ZSHKIT
 EOF
 cat > $HOME/.zshrc <<EOF
 source \$ZSHKIT/zshrc
-source ~/.zshrc.local
 EOF

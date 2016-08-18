@@ -1,3 +1,7 @@
+if [[ -x /usr/libexec/path_helper ]]; then
+	eval $(/usr/libexec/path_helper -s)
+fi
+
 path=(/usr/local/bin /usr/bin /usr/local/sbin /usr/sbin $path)
 
 # If macports is installed
@@ -17,9 +21,5 @@ fi
 # Setup home directory bin path.
 path=(~/bin $path)
 
-# setup fpath
-
-fpath=($ZSHKIT/func $ZSHKIT/completions/src $fpath)
-
-# cleanup the path.
-typeset -U fpath path manpath
+# set up fpath
+fpath=(~/.zsh/func $fpath)

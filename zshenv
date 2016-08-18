@@ -1,8 +1,10 @@
-if [[ -x /usr/libexec/path_helper ]]; then
-	eval $(/usr/libexec/path_helper -s)
-fi
-mydir=`dirname $0`
+source $ZSHKIT/env/path.zsh
 
-for f in $mydir/env/??_*.zsh; do
-	source $f
+local_env="$ZSHKIT/env/local"
+
+for script in $local_env/*.(sh|zsh); do
+  script_path="$local_env/$script_path"
+  if [ -s "$script_path" ]; then
+    source $script_path
+  fi
 done
