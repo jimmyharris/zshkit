@@ -44,13 +44,10 @@ zstyle ':completion:*:history-words' remove-all-dups yes
 zstyle ':completion:*:history-words' list false
 zstyle ':completion:*:history-words' menu yes
 
-
 # LS Colours
-zmodload -i zsh/complist
+# zmodload -i zsh/complist
 
 # zstyle ':completion:*' list-colors ''
 
 zstyle ':completion:*:*:kill:*:processes' list-colors \
   '=(#b) #([0-9]#)*=0=01;31'
-
-autoload -Uz compinit && compinit

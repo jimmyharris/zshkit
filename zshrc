@@ -1,10 +1,20 @@
-BASE16_SHELL="$ZSHKIT/base16-shell/base16-default.dark.sh"
-[[ -s $BASE16_SHELL  ]] && source $ZSHKIT/base16-shell/base16-default.dark.sh
-autoload -Uz colors
-colors
+typeset -gx ZPLUG_HOME=$ZSHKIT/zplug
+if [ ! -s "$ZPLUG_HOME/init.zsh" ]; then
+  cd $ZSHKIT
+  git submodule update --init --recursive
+fi
 
-mydir=`dirname $0`
+source $ZPLUG_HOME/init.zsh
 
-for f in $mydir/rc/??_*.zsh; do
-	source $f
-done
+# Load all plugins
+source $ZSHKIT/plugins.zsh
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+zplug load

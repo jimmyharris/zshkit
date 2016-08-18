@@ -1,6 +1,3 @@
-
-typeset -U path
-
 if [[ -x `which nvim` ]]; then
 	EDITOR=nvim
 elif [[ -x `which vim` ]]; then
@@ -14,4 +11,3 @@ else
 fi
 
 export EDITOR
-

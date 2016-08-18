@@ -1,7 +1,0 @@
-ZSHKIT=$HOME/.zshkit
-source $ZSHKIT/zshenv
-if [[ -f ~/.zshenv.local ]]; then
-  source ~/.zshenv.local
-fi
-
-export ZSHKIT

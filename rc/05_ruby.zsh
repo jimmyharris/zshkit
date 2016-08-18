@@ -33,5 +33,3 @@ if [[ -n $rbenv_root ]]; then
     esac
   }
 fi
-
-typeset -U fpath path manpath

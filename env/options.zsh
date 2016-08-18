@@ -26,7 +26,7 @@ setopt  	    hash_cmds
 setopt  	    hash_dirs
 setopt  	    hash_list_all
 setopt  	    hist_allow_clobber
-setopt  	    hist_beep
+# setopt  	    hist_beep
 setopt  	 NO_hup
 setopt  	 NO_ignore_braces
 setopt  	    ignore_eof
@@ -64,7 +64,7 @@ setopt unset NO_verbose
 # setopt  	    auto_param_slash
 # setopt  	    auto_remove_slash
 # setopt  	 NO_auto_resume
-# setopt  	 NO_beep
+setopt  	 NO_beep
 # setopt  	 NO_bsd_echo
 setopt  	    complete_aliases
 # setopt  	 NO_correct
@@ -87,3 +87,4 @@ setopt  	    complete_aliases
 # setopt  	    pushd_silent
 # setopt  	    sh_option_letters
 # setopt  	    NO_sh_word_split
+
