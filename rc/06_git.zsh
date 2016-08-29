@@ -1,10 +1,10 @@
-if [[ -x `which git` ]]; then
-	if [[ -s `which hub` ]] ; then
-    alias git='hub'
+if [ -x "$(which git)" ]; then
+	if [ -x "$(which hub)"  ] ; then
+    eval "$(hub alias -s)"
 	fi
 	alias g=git
 
-  if [[ -d /usr/lib/git-core ]]; then
+  if [ -d /usr/lib/git-core ]; then
     path=($path /usr/lib/git-core)
   fi
 

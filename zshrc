@@ -7,7 +7,7 @@ fi
 source $ZPLUG_HOME/init.zsh
 
 # Load all plugins
-source $ZSHKIT/plugins.zsh
+source $ZSHKIT/packages.zsh
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check; then
@@ -18,3 +18,6 @@ if ! zplug check; then
 fi
 
 zplug load
+
+# Make sure paths don't grow endlessly with subshells.
+typeset -U path fpath
