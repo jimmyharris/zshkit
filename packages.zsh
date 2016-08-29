@@ -6,14 +6,14 @@ zplug "chriskempson/base16-shell", \
 zplug "joel-porquet/zsh-dircolors-solarized"
 
 # Python virtualenv support. 
-zplug "aperezdc/virtualz"
+zplug "jimmyharris/virtualz", at:"fix_virtualz_dir"
 
 # Additional zsh completions.
 zplug "zsh-users/zsh-completions"
 
 # Prompt.
-zplug "cusxio/delta-prompt", \
-  use:"delta.zsh"
+zplug "frmendes/geometry", \
+  use:"geometry.zsh"
 
 # Load local configuration after other plugins but pre-compinit. 
 zplug "$ZSHKIT/rc", \
@@ -24,4 +24,3 @@ zplug "$ZSHKIT/rc", \
 # Load Post compinit plugins
 zplug "zsh-users/zsh-syntax-highlighting", \
   nice:11
-

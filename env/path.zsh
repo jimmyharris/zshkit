@@ -11,15 +11,17 @@ if [[ (! -L "/opt/local" ) && ( -d "/opt/local") ]]; then
 fi
 
 if [[ -d "$HOME/.linuxbrew/bin" ]]; then
-  path=(~/.linuxbrew/bin $path)
+  path=("$HOME/.linuxbrew/bin" $path)
 fi
 
 if [[ -d "$HOME/.local/bin" ]]; then
-  path=(~/.local/bin $path)
+  path=("$HOME/.local/bin" $path)
 fi
 
-# Setup home directory bin path.
-path=(~/bin $path)
-
 # set up fpath
-fpath=(~/.zsh/func $fpath)
+fpath=("$ZSHKIT/func" $fpath)
+
+# Setup home directory bin path.
+path=("$HOME/bin" $path)
+
+typeset -U path fpath manpath
