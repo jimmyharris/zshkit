@@ -11,9 +11,11 @@ zplug "jimmyharris/virtualz", at:"fix_virtualz_dir"
 # Additional zsh completions.
 zplug "zsh-users/zsh-completions"
 
-# Prompt.
-zplug "frmendes/geometry", \
-  use:"geometry.zsh"
+# Prompt. (lock at this version untill timestamp bug is fixed.)
+# zplug "frmendes/geometry", at:c8ec1b63d91834cd9f9bd5b345f6ca8d097301f8, \
+  # use:"geometry.zsh"
+zplug "mafredri/zsh-async", on:"sindresorhus/pure"
+zplug "sindresorhus/pure", use:"pure.zsh"
 
 # Load local configuration after other plugins but pre-compinit. 
 zplug "$ZSHKIT/rc", \
