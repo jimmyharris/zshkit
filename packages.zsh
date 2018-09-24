@@ -1,8 +1,6 @@
 #!/bin/zsh
 
 zplug "chrissicool/zsh-256color"
-zplug "chriskempson/base16-shell", \
-  use:"scripts/base16-default-dark.sh"
 zplug "joel-porquet/zsh-dircolors-solarized"
 
 # Python virtualenv support. 
