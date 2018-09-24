@@ -1,5 +1,5 @@
 if [ -x "$(which git)" ]; then
-	if [ -x "$(which hub)"  ] ; then
+	if [ -x "$(which hub)" ] && [ -n "$ZSHKIT_SETUP_HUB_ALIAS" ]; then
     eval "$(hub alias -s)"
 	fi
 	alias g=git
