@@ -5,3 +5,5 @@ waf() {
     echo "Waf not found in current directory."
   fi
 }
+
+alias ibwaf=waf
