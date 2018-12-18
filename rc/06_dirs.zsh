@@ -1,2 +1,2 @@
-alias fd=pushd
-alias sd=popd
+alias sd=pushd
+alias pd=popd
