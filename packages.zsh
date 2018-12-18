@@ -1,7 +1,6 @@
 #!/bin/zsh
 
 zplug "chrissicool/zsh-256color"
-zplug "joel-porquet/zsh-dircolors-solarized"
 
 # Python virtualenv support. 
 zplug "jimmyharris/virtualz", at:"fix_virtualz_dir"
