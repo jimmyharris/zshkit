@@ -18,8 +18,8 @@ zplug "sindresorhus/pure", use:"pure.zsh"
 zplug "$ZSHKIT/rc", \
   from:"local", \
   use:"**/*.(sh|zsh)", \
-  nice:1
+  defer:1
 
 # Load Post compinit plugins
 zplug "zsh-users/zsh-syntax-highlighting", \
-  nice:11
+  defer:3
