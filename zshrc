@@ -1,23 +1,27 @@
-typeset -gx ZPLUG_HOME=$ZSHKIT/zplug
+typeset -gx ZPLUG_HOME=$HOME/.config/zplug
+
 if [ ! -s "$ZPLUG_HOME/init.zsh" ]; then
-  cd $ZSHKIT
-  git submodule update --init --recursive
-fi
-
-source $ZPLUG_HOME/init.zsh
-
-# Load all plugins
-source $ZSHKIT/packages.zsh
-
-# Install plugins if there are plugins that have not been installed
-if ! zplug check; then
-    printf "Install? [y/N]: "
+    printf "Install zplug ? [y/N]: "
     if read -q; then
-        echo; zplug install
+        echo; curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
     fi
 fi
 
-zplug load
+if [ -s "$ZPLUG_HOME/init.zsh" ]; then
+    source $ZPLUG_HOME/init.zsh
 
+    # Load all plugins
+    source $ZSHKIT/packages.zsh
+
+    # Install plugins if there are plugins that have not been installed
+    if ! zplug check; then
+        printf "Install zplug plugins? [y/N]: "
+        if read -q; then
+            echo; zplug install
+        fi
+    fi
+
+    zplug load
+fi
 # Make sure paths don't grow endlessly with subshells.
 typeset -U path fpath
