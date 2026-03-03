@@ -1,0 +1,22 @@
+{
+	"name": "base16",
+	"groups": {
+		"jobnum":               { "fg": "base07_256", "bg": "base07_256" },
+		"user":                 { "fg": "base06_256", "bg": "base04_256" },
+		"superuser":            { "fg": "base03_256", "bg": "base08_256" },
+		"virtualenv":           { "fg": "base00_256", "bg": "base0B_256" },
+		"branch":               { "fg": "base05_256", "bg": "base02_256" },
+		"branch_dirty":         { "fg": "base0A_256", "bg": "base02_256" },
+		"branch_clean":         { "fg": "base00_256", "bg": "base02_256" },
+		"continuation":         { "fg": "base0A_256", "bg": "base01_256" },
+		"continuation:current": { "fg": "base07_256", "bg": "base04_256" },
+		"cwd":                  { "fg": "base04_256", "bg": "base01_256" },
+		"cwd:current_folder":   { "fg": "base04_256", "bg": "base01_256" },
+		"cwd:divider":          { "fg": "base03_256", "bg": "base02_256" },
+		"hostname":             { "fg": "base05_256", "bg": "base02_256" },
+		"exit_fail":            { "fg": "base03_256", "bg": "base08_256" },
+		"exit_success":         { "fg": "base03_256", "bg": "base0B_256" },
+		"environment":          { "fg": "base01_256", "bg": "base0B_256" },
+		"mode":                 { "fg": "base01_256", "bg": "base0B_256" }
+	}
+}
