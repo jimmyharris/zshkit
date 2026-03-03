@@ -20,3 +20,5 @@ zplug "$ZSHKIT/rc", \
 # Load Post compinit plugins
 zplug "zsh-users/zsh-syntax-highlighting", \
   defer:3
+
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
